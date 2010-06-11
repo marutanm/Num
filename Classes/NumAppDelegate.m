@@ -7,19 +7,24 @@
 //
 
 #import "NumAppDelegate.h"
+#import "TitleViewController.h"
 
 @implementation NumAppDelegate
 
 @synthesize window;
+@synthesize titleView;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
     NSLog(@"%s", __func__);
     window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	
+
+    titleView = [[TitleViewController alloc] init];
+    [window addSubview:titleView.view];
+    [TitleViewController release];
+
     [window makeKeyAndVisible];
-	
 	return YES;
 }
 

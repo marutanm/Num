@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class TitleViewController;
+
 @interface NumAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+    TitleViewController *titleView;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) TitleViewController *titleView;
 
 @end
 
