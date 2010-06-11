@@ -15,7 +15,7 @@
 @synthesize titleView;
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+- (void)applicationDidFinishLaunching:(UIApplication *)application {    
 
     NSLog(@"%s", __func__);
     window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -25,7 +25,6 @@
     [TitleViewController release];
 
     [window makeKeyAndVisible];
-	return YES;
 }
 
 
