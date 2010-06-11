@@ -11,22 +11,30 @@
 
 @implementation TitleViewController
 
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
-    [self loadView];
+    NSLog(@"%s", __func__);
+    [super loadView];
     UIView *view = [[UIView alloc] init];
     self.view = view;
     [view release];
+    [self startPicker];
+}
+
+
+#pragma mark -
+#pragma mark Peer Picker Related Methods
+
+-(void)startPicker {
+    NSLog(@"%s", __func__);
+	GKPeerPickerController*		picker;
+	
+	// self.gameState = kStatePicker;			// we're going to do Multiplayer!
+	
+    // note: picker is released in various picker delegate methods when picker use is done.
+	picker = [[GKPeerPickerController alloc] init]; 
+	picker.delegate = self;
+	[picker show];
 }
 
 /*
