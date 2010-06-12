@@ -11,7 +11,17 @@
 
 
 @interface TitleViewController : UIViewController {
+	// networking
+	GKSession		*gameSession;
+	int				gameUniqueID;
+	int				gamePacketNumber;
+	NSString		*gamePeerId;
+	NSDate			*lastHeartbeatDate;
 
 }
+
+@property(nonatomic, retain) GKSession	 *gameSession;
+@property(nonatomic, copy)	 NSString	 *gamePeerId;
+@property(nonatomic, retain) NSDate		 *lastHeartbeatDate;
 
 @end
