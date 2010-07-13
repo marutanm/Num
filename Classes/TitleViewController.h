@@ -10,7 +10,7 @@
 #import <GameKit/GameKit.h>
 
 
-@interface TitleViewController : UIViewController {
+@interface TitleViewController : UIViewController <GKPeerPickerControllerDelegate>{
 	// networking
 	GKSession		*gameSession;
 	int				gameUniqueID;
