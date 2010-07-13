@@ -24,4 +24,6 @@
 @property(nonatomic, copy)	 NSString	 *gamePeerId;
 @property(nonatomic, retain) NSDate		 *lastHeartbeatDate;
 
+-(void)startPicker;
+
 @end
