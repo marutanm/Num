@@ -63,17 +63,20 @@
 } 
 
 - (void)peerPickerController:(GKPeerPickerController *)picker didSelectConnectionType:(GKPeerPickerConnectionType)type {
+    NSLog(@"%s", __func__);
 }
 
 //
 // Provide a custom session that has a custom session ID. This is also an opportunity to provide a session with a custom display name.
 //
 - (GKSession *)peerPickerController:(GKPeerPickerController *)picker sessionForConnectionType:(GKPeerPickerConnectionType)type { 
+    NSLog(@"%s", __func__);
 	GKSession *session = [[GKSession alloc] initWithSessionID:SessionID displayName:nil sessionMode:GKSessionModePeer]; 
 	return [session autorelease]; // peer picker retains a reference, so autorelease ours so we don't leak.
 }
 
 - (void)peerPickerController:(GKPeerPickerController *)picker didConnectPeer:(NSString *)peerID toSession:(GKSession *)session { 
+    NSLog(@"%s", __func__);
 	// Remember the current peer.
 	self.gamePeerId = peerID;  // copy
 	
