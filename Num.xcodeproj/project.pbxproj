@@ -177,6 +177,7 @@
 				GCC_PREFIX_HEADER = Num_Prefix.pch;
 				INFOPLIST_FILE = "Num-Info.plist";
 				PRODUCT_NAME = Num;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
