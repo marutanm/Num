@@ -62,10 +62,6 @@
 	// self.gameState = kStateStartGame;
 } 
 
-- (void)peerPickerController:(GKPeerPickerController *)picker didSelectConnectionType:(GKPeerPickerConnectionType)type {
-    NSLog(@"%s", __func__);
-}
-
 //
 // Provide a custom session that has a custom session ID. This is also an opportunity to provide a session with a custom display name.
 //
