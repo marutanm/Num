@@ -43,14 +43,22 @@
 	[picker show];
 }
 
+-(void)endPicker:(GKPeerPickerController *)picker{
+    NSLog(@"%s", __func__);
+    if (picker.visible) {
+        [picker dismiss];
+    }
+	picker.delegate = nil;
+	[picker autorelease];
+}
+
 #pragma mark GKPeerPickerControllerDelegate Methods
 
 - (void)peerPickerControllerDidCancel:(GKPeerPickerController *)picker { 
+    NSLog(@"%s", __func__);
 	// Peer Picker automatically dismisses on user cancel. No need to programmatically dismiss.
     
-	// autorelease the picker. 
-	picker.delegate = nil;
-    [picker autorelease]; 
+    [self endPicker:picker];
 	
 	// invalidate and release game session if one is around.
 	if(self.gameSession != nil)	{
@@ -82,9 +90,7 @@
 	[self.gameSession setDataReceiveHandler:self withContext:NULL];
 	
 	// Done with the Peer Picker so dismiss it.
-	[picker dismiss];
-	picker.delegate = nil;
-	[picker autorelease];
+    [self endPicker:picker];
 	
 	// Start Multiplayer game by entering a cointoss state to determine who is server/client.
 	// self.gameState = kStateMultiplayerCointoss;
