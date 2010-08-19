@@ -12,11 +12,11 @@
 
 @interface NumAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    TitleViewController *titleView;
+    TitleViewController *titleViewController;
 }
 
 @property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) TitleViewController *titleView;
+@property (nonatomic, retain) TitleViewController *titleViewController;
 
 @end
 

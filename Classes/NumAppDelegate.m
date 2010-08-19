@@ -12,23 +12,24 @@
 @implementation NumAppDelegate
 
 @synthesize window;
-@synthesize titleView;
+@synthesize titleViewController;
 
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     NSLog(@"%s", __func__);
     window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    titleView = [[TitleViewController alloc] init];
-    [window addSubview:titleView.view];
-    [TitleViewController release];
+    titleViewController = [[TitleViewController alloc] init];
+    [window addSubview:titleViewController.view];
 
     [window makeKeyAndVisible];
+    return YES;
 }
 
 
 - (void)dealloc {
+    [TitleViewController release];
     [window release];
     [super dealloc];
 }

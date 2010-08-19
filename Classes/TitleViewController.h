@@ -10,9 +10,10 @@
 #import <GameKit/GameKit.h>
 
 
-@interface TitleViewController : UIViewController <GKPeerPickerControllerDelegate>{
+@interface TitleViewController : UIViewController <GKPeerPickerControllerDelegate, GKSessionDelegate>{
 	// networking
-	GKSession		*gameSession;
+	GKPeerPickerController  *picker;
+    GKSession		*gameSession;
 	int				gameUniqueID;
 	int				gamePacketNumber;
 	NSString		*gamePeerId;
@@ -20,6 +21,7 @@
 
 }
 
+@property(nonatomic, retain) GKPeerPickerController  *picker;
 @property(nonatomic, retain) GKSession	 *gameSession;
 @property(nonatomic, copy)	 NSString	 *gamePeerId;
 @property(nonatomic, retain) NSDate		 *lastHeartbeatDate;
